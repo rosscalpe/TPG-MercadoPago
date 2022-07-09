@@ -19,7 +19,8 @@ app.use(session({
 }));
 
 // Step 2
-// app.use(???)
+const cart = require('./middlewares/cart');
+app.use(cart);
 
 app.use(require('./routes/main.routes'))
 app.use('/checkout',require('./routes/checkout.routes'))

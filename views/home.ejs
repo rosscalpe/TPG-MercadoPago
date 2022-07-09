@@ -9,11 +9,15 @@
             <% }) %>
         <% } %>
     </ul>
-
-    <!--
-    <ul>
-        // Step 4
-    </ul>
-    -->
+    <% if (cart.length > 0) { %>
+        <ul id="cart">
+            <% cart.forEach(element => { %>
+                <%- include ('./partials/item.ejs',element) %> 
+            <% }) %>
+        </ul>
+        <form action="/checkout/process" method="post">
+            <button type="submit">Checkout</button>
+        </form>
+    <% } %>
 </body>
 </html>
